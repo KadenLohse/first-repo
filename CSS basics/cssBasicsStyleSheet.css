@@ -1,0 +1,154 @@
+h2{
+    color:blanchedalmond;
+    background-color: rgb(121, 121, 121);
+    width: 50%;
+}
+/* 
+    COLORS
+
+    -color attribute changes the color of the text
+    -background-color attribute changes the background color
+    -Hexadecimal is 0-9 and a-f, #ffffff being black and #000000 being white,
+     the first two items represents red, the next two are green, last two are blue
+    
+*/
+
+h3{
+    text-align: center;
+    font-weight: 400;
+    text-decoration: rgb(70, 44, 3) underline;
+    letter-spacing: 2px;
+
+    font-size: 25px;
+}
+p{
+    line-height: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+/* 
+    TEXT PROPERTIES
+
+    -Text-align aligns text in the center, right, or left
+    -font-weight changes the darkness of the font, 400= normal, 700= bold
+    -text-decoration can add underline, overline, stirkethrough. Add the color 
+     before the word to change its color
+        -text-decoration: none; removes all text decoration
+    -line-height changes the spacing between lines
+    -letter-spacing changes the space between the letters
+
+
+    FONT PROPERTIES
+
+    -font-size changes the font size of the object
+    -font-family changes the actual font of the text
+    -fonts following the first font are backups in case 
+     the browser does not have the original font
+    
+*/
+
+
+#secondParagraph{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.thirdParagraph{
+    color:coral;
+}
+
+li a{
+    color:darkolivegreen;
+}
+
+#secondList a{
+    color: red;
+}
+
+#adjacentP{
+    text-align: left;
+    text-decoration: none;
+}
+
+#adjacentP + p{
+    font-size: 15px;
+}
+
+div > li{
+    color: darkviolet;
+}
+
+input[type="text"]{
+    font-weight: bold;
+}
+
+.hoverText:hover{
+    font-size: larger;
+}
+
+.activeButton{
+    background: grey;
+}
+.activeButton:active{
+    background-color: floralwhite;
+}
+
+.selectedElement::selection{
+    background-color: orange;
+}
+
+/* 
+    SELECTORS
+
+    > * = universal selector
+    > element selector = selects all elements of the given type, ex: h2, div, button
+        -adding a comma between the elements in the element 
+         selector will style both ex: h1, h2{}
+    > #id = the id selector, preface the id with a #, two elements should not have the same id
+    > .class = the class selector, preface the class with a '.', classes are used to 
+      group together common types
+    > descendant selector= in the example 'li a {}' only anchor tags within a list will be
+      selected
+    > adjacent selector= in the example '#adajacentP + p{}', the p is styled because 
+     it js nested within the tag with id="adjacentP"
+    > direct child= in the example 'div>li{}' the li is a direct descendant of the div class
+      so it gets styled
+    > attribute selector= selects all input elements with the given type ex: 'type[text]{}'
+
+    >PSEUDO CLASSES- 'object:PSEUDO', ex: 'h2:hover'
+        -hover
+        -active= something being activated
+        -checked= applies to radio boxes or check boxes that are checked
+        -nth-of-type= changes every nth of a type, ex: 'p:nth-of-type(2n)', 
+         this will change every other element in the p tag
+    >PSEUDO ELEMENTS
+        -:: is used to indicate a pseudo element (not necessary)
+        -first-letter= selects only the first letter in the given element, ex: 'h2::firs-letter{}'
+        -first-line= slects the first line of a paragraph
+        -selection= any part of a selected element
+        -before/after
+
+    
+    >SPECIFICITY
+        -id > classes/pseudos > elements
+        -when styling, the more specific a style call is, the more important it will be
+
+    >INLINE STYLES (not typically used)
+        -more specific than id's
+        -ex: <h2 style="color:blue">, this will overpower anything in the style sheet
+        -using the tag '!important' after a style call will cause it to overpower 
+         anything in the stylesheet ex: 'color: blue !important;'
+        -both are bad ideas to use
+
+    >INHERITANCE
+        -the child elements of a parent element will inherit the styles from the parent
+         the child will not inherit if its style is set somewhere else
+        -some elements do not inherit traits by default
+        -to force something to inherit, add the word 'inherit' after the style call
+         ex: 'color: inherit;' (not super common)
+        -the border tag does not inherit
+
+
+
+*/
+

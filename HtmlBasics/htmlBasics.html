@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<!-- 
+    EXTENSIONS
+
+    Emmet: adds shortcuts (built in to vs code)
+
+    
+    
+    VS Tips and Shortcuts:
+    
+    -Ctrl + 'n' = new file
+    -Ctrl + Shift + 'p' opens commands list
+    -Shift + alt + f = format doc
+    -Shift + alt + DOWN = copy line down
+    -ctrl + / = new comment
+
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Basics</title>
+</head>
+
+<body>
+    <h1>This is the h1 tag</h1>
+    <!--try to only have 1 h1 tag per page-->
+
+    <p>This is a <b>Bold</b> Word</p> <!--not commonly used-->
+    <!--'b' then tab creates a bold tag-->
+
+    <a href="http://www.google.com">this is an anchor tag that brings you to <b>Google</b></a>
+    <!--href must be included with the url-->
+
+    <br> <!-- This is a line break-->
+
+    <a href="htmlBasicsAltFile.html">this is an anchor tag that brings you to the <b>Alt Page</b></a>
+    <!-- 'a' + tab creates an anchor tag-->
+
+    <h2>This is the h2 tag</h2>
+    <!--h3, h4, h5, etc...-->
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iste
+        perspiciatis praesentium est quibusdam totam, maxime voluptate perferendis
+        repudiandae natus qui cumque?...
+    </p>
+    <!--type lorem for filler text-->
+
+    <h2>Lists</h2>
+    <ul>
+        <!--Unordered list-->
+        <li>This is an unordered list</li>
+        <li>this is the second item in the list</li>
+    </ul>
+    <ol>
+        <!--Ordered list-->
+        <li>this is an ordered list</li>
+        <li>this is the second item in the list</li>
+    </ol>
+
+    <img src="" alt="">
+    <!--
+        -Include 'src'
+        -when inserting an image include the exact image url
+        -the alt attribute is used to replace an image when it fails to load, it assigns a new name to the image
+    -->
+
+    <div>
+        <!-- a div tag divides and groups content together-->
+        <p>This Text is inside a div</p>
+    </div>
+
+    <span>
+        <!-- generic element similar to div, separates and groups content together -->
+        <p>This Text is inside of a span</p>
+    </span>
+
+    <section> 
+        <!--section acts the same as a div or a span-->
+        <p>This Text is inside of a section</p>
+    </section>
+
+    <hr> <!-- The hr tag adds a horizontal divider between points (not commonly used) -->
+    <br> <!-- this adds a text break (not commonly used)-->
+    <sup></sup> <!-- this tag adds superscript (not commonly used)-->
+    <sub></sub> <!-- this tag adds subscript (not commonly used)-->
+
+    <!-- 
+        SEMANTIC ELEMENTS
+
+        -<main>, <nav>, <header>, <footer>, <section> etc.. are all 
+         elements that catagorize and help create readable and meaningful 
+         markups
+
+        -main = main content of the page
+        -nav = anything on the page that provides navigation links
+        -section = represents a standalone section of content (more specific than a div)
+        -article = any selfcontained composition in a document, used on things that are reusable
+        -aside = non-essential parts of the page (sidebars)
+        -header = intro content, often includes nav info, can be used within other elements
+        -footer = ending content, often includes nav info, can be used within other elements
+        -time = calls something out as time, specify the datetime arg
+        -figure = adds a caption to content, contains a <figcaption> tag within
+    -->
+
+    <h1>Below this is a table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>table num</th>
+                <th>First column header</th> <!-- this is a table header, have one table header per column-->
+                <th>Second column header</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <!-- this is a table row -->
+                <td>1</td>
+                <td> This is the first table cell </td>
+                <!--Table data cell-->
+                <td>second column in first row</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td> This is the second table cell </td>
+                <td>second column in third row</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td> This is the third table cell </td>
+                <td>second column in third row</td>
+            </tr>
+        </tbody>
+
+        <!-- 
+            <tbody> = table body
+            <thead> = table header 
+            <tfoot> = tabled footer
+            callspan, rowspan change how much space a header takes. ex: <thead callspan="2">
+        -->
+    </table>
+    <hr>
+
+    <h1>Below this is a form with varying inputs</h1>
+    <form action="./htmlBasicsAltFile.html">
+        <!-- 
+            FORMS
+            -the area where content and inputs are grouped, it also specifies where the data is sent
+            -the action attribute specifies where the data is sent when the form is submitted
+
+
+            INPUTS
+
+            -<input> element crates a variety of controls, no closing tag
+            -type attribute determines the type of input
+            -placeholder attribute is placeholder for the value of the box. ex: username, password, etc
+
+
+            LABEL
+
+            -<label> element labels different types of inputs
+            -label need the for attribute that matches with the id attribute for the input types
+
+
+            BUTTONS
+
+            -<button> tag creates a button
+            -the default type of a button INSIDE a form will submit the form. If the button type is type="button"
+             then the button will not submit the form
+            -the name attribute is the name of the data that will be sent to the server
+                -name is seen in the URL 
+            
+        
+        -->
+        <p>
+            <label for="inputTextBox">This input is a text: </label>
+            <input type="text" placeholder="Text" id="inputTextBox" name="text">
+        </p>
+        <p>
+            <label for="inputPaswordBox">This input is a Password: </label>
+            <input type="password" placeholder="Password" id="inputPaswordBox" name="password">
+        </p>
+        <p>
+            <label for="inputColor">This input is a Color: </label>
+            <input type="color" id="inputColor" name="color">
+        </p>
+        <p>
+
+            <label for="inputNumberBox">This input is a Number: </label>
+            <input type="number" placeholder="Number" id="inputNumberBox" name="input">
+        </p>
+
+        <button>Submit</button> <!--this button is within the form so it completes the action of the form-->
+        <button type="button">This button will not submit</button> <!--This button will not submit because of its type-->
+
+    </form>
+
+    <h2>Hijacking Search Bars</h2>
+    <h3>Search Reddit</h3>
+    <form action="https://www.reddit.com/search">
+        <label for="redditSearchBar">This acts as the Reddit search bar: </label>
+        <input type="text" name="q" placeholder="search" id="redditSearchBar">
+        <button>Search Redit</button>
+    </form>
+    <h3>Search Google</h3>
+    <form action="https://www.google.com/search">
+        <label for="googleSearchBar">This acts as the Google search bar: </label>
+        <input type="text" name="q" placeholder="search" id="googleSearchBar">
+        <button>Search Google</button>
+    </form>
+    <h3>Search Youtube</h3>
+    <form action="https://www.youtube.com/results">
+        <label for="YoutubeSearchBar">This acts as the Youtube search bar: </label>
+        <input type="text" name="search_query" placeholder="search" id="YoutubeSearchBar">
+        <button>Search Youtube</button>
+    </form>
+
+    <h2>More Inputs</h2>
+    <form action="./htmlBasicsAltFile.html">
+        <p>
+        <label for="checkbox">Check This box:</label>
+        <input type="checkbox" id="checkbox" name="checkBox">         
+        <!--
+            -Adding the word "checked" at the end of the checkbox input, 
+            sets the default value to be checked
+            -if the box is checked then the url will have the name=on
+        -->
+        </p>
+        <p>
+            <label for="radioOne">First option: </label>
+            <input type="radio" name="radioButton" id="radioOne" value="firstOption"> 
+
+            <label for="radioTwo">Second option: </label>
+            <input type="radio" name="radioButton" id="radioTwo" value="secondOption">
+
+            <label for="radioThree">Third option: </label>
+            <input type="radio" name="radioButton" id="radioThree" value="thirdOption">
+            <!--
+                -when the names are the same the radio buttons will be grouped
+                -value attribute adds which button is selected to the url
+                 without the value, it will display as on for each option
+            -->
+        </p>
+        <p>
+            <label for="dropdownMenu">This is a dropdown menu: </label>
+            <select name="menu" id="dropdownMenu">
+                <option selected>--Choose an Option--</option>
+                <option value="firstOption">First Choice</option>
+                <option value="secondOption">Second Choice</option>
+                <option value="thirdOption">Third Choice</option>
+            </select>
+        </p>
+        <p>
+            <label for="rangeSlider">Slider input:</label>
+            <input type="range" id="rangeSlider" min="0" max="10" value="5" name="slider">
+            <!--
+                -adding min or max can also be applied to the number input
+                -adding a step attribute adds a multiplier. ex step="5", each increase will 
+                 go up by 5 rather than by one
+                -value sets the default value
+            -->
+        </p>
+        <p>
+            <label for="textArea">This is a text area:</label>
+            <br>
+            <textarea id="textArea" rows="5" cols="20" name="textArea" placeholder="Type something here"></textarea>
+        </p>
+        <button>submit</button>
+    </form>
+
+    <!-- 
+        BASIC VALIDATIONS
+
+        -required attribute requires an input before submission
+        -minLength and maxLength attributes require a min or max amount of characters
+        -pattern attribute assures that inputs follow a certain pattern, ex: emails, urls, etc
+
+     -->
+
+</body>
+
+</html>
