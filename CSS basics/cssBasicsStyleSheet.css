@@ -1,3 +1,8 @@
+html{
+    font-size: 15px;
+}
+
+
 h2{
     color:blanchedalmond;
     background-color: rgb(121, 121, 121);
@@ -148,7 +153,219 @@ input[type="text"]{
          ex: 'color: inherit;' (not super common)
         -the border tag does not inherit
 
+*/
 
+#boxModelHeading{
+    color: black;
+    background-color: white;
+    border-top: 2.5px solid grey;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-top: 15px;
+}
+
+div{
+    width: 400px;
+    height: 100px;
+}
+
+#boxModelp1{
+    background-color: rgb(163, 163, 163);
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    /* box-sizing: border-box; this sets the total box border to the 200px, without it the whole box would be 210px */
+    margin: 10px;
+}
+#boxModelp2{
+    background-color: rgb(131, 131, 131);
+    border-color: red;
+    border-width: 4px;
+    border-style: dashed;
+    border-left-color: purple;
+    margin: 10px;
+}
+#boxModelp3{
+    background-color: rgb(117, 117, 117);
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 10px; /* you can also use a percentage of the width and height, (50%) creates a circle*/
+    margin: 10px;
+}
+#paddingModelp1{
+    background-color: rgb(230, 233, 192);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+#paddingModelp2{
+    background-color: rgb(226, 214, 201);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 10px;
+}
+
+#buttonPadding{
+    padding: 5px 10px; 
+    /* this applies padding to the top (5px) and the sides (10px) */
+    font-size: 30px;
+
+    margin-top: 20px;
+}
+#buttonPadding:active{
+   background-color: rgb(121, 121, 121);
+   margin: 30px;
+}
+
+/* 
+
+    CSS BOX MODEL
+
+    -This is the idea that everything within css is inside a box
+    -width will change the width of the content area, height does the same
+        -box-sizing will change the area of the borderbox
+    -borders
+        -border-width= controls the thickness of the border
+        -border-style= controls the style (dotted, dashes, solid, etc)
+        -border-color= changes the color of the border
+        -border style width and color are required to actually see the border
+        -instead of writing all three properties individually, you can write 'border: width style color'
+        -borderradius lets you create rounded corners
+        -to find the mant other border properties use references such as mdn
+    -padding
+        -the space between the border and the content area
+        -padding can be applied to the whole thing or even separately to the left right top or bottom
+            -padding:10px = all sides
+            -padding: 5px 10px = vertical | horizontal
+            -pading: 1px 2px 3px = top | horizontal | bottom
+            -padding: 1px 2px 3px 4px = top | right | bottom | left
+    
+    -Margin
+        -the space on the outside of the border between other objects
+            -margin left right top and bottom
+            -margin:10px = all sides
+            -margin: 5px 10px = vertical | horizontal
+            -margin: 1px 2px 3px = top | horizontal | bottom
+            -margin: 1px 2px 3px 4px = top | right | bottom | left
+        -the body has a default margin of 10, most devs set that to 0 when creating a new webpage
 
 */
 
+#displayProperties{
+    border-top: 2.5px solid grey;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-top: 15px;
+
+    background-color: rgb(200, 200, 200);
+    color: black;
+
+    display: inline-block; /* this prevents it from taking up the entire line in the doc*/
+    /* if just inline is used then the margin and padding will be ignored */
+}
+
+#displayModelp1{
+    margin: 10px;
+    border: 1px solid black;
+    background-color: rgb(204, 237, 243);
+
+    width: 400px;
+    line-height: 1.5;
+}
+#displayModelp2{
+    margin: 10px;
+    background-color: rgb(191, 211, 216);
+    width: 400px;
+    line-height: 1.5;
+}
+#displayModelp3{
+    margin: 10px;
+    background-color: rgb(142, 161, 165);
+    width: 400px;
+    line-height: 1.5;
+}
+
+#spanBlock{
+    border: 2.5px solid black;
+    display: block; /* this span takes up the whole row because of the display:block*/
+}
+
+
+/* DISPLAY PROPERTY
+
+    -inline= applies to tags that do not take up the entire line of space
+        -display:inline makes an object act as an inline
+        -width, height, margin, etc are ignored if there is a display inline
+    -block= applies to h tags, it takes up the entire line of space
+        -display:block makes an object act as a block
+    -inline-block= behaves like an inline object but the width height and padding are all respected
+    -display:none will hide the element
+
+ */
+
+ #unitsHeader{
+    border-top: 2.5px solid grey;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-top: 15px;
+
+    background-color: rgb(200, 200, 200);
+    color: black;
+ }
+
+ #firstUnitSection{
+    background-color: rgb(224, 193, 193);
+    width: 400px;
+    height: 400px;
+ }
+section>div{
+    background-color: rgb(240, 150, 150);
+    width: 50%;
+    height:50%;
+    /* the percentage for w and h on the div is taken from the section w and h because it is the parent of the div */
+}
+ 
+
+.unitsH3{
+    text-align: left;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+.articleP{
+    line-height: 2;
+
+    font-size: 1.5rem; 
+    /* the default font-size is set to 15px so this will set the font size of this element to 22.5px */
+}
+
+article{
+    font-size: 15px;
+}
+
+article>h3{
+    font-size: 2em; /* this will make the font size twice the size of the parent, in this case it will be 30px*/
+}
+
+
+ /*  
+    CSS UNITS
+
+    -pixels are absolut units
+    -percentages are relative to another value, ex: width:50% makes the width half of the parents value
+        -line-height:50% = half of the font-size of the element itself, this does not take from the parent
+    -ems= with a font size of 1em, it is going to be the same font size as the parent, 2em is twice the font size
+        -in other cases it will use the current font size ex: 'font-size:20px;' 'margin-left:2em', 
+         the margin will be 40px
+        -font size refers to the parent, other calls will refer to the elements font size
+    -rems= the root of em
+        -most common example is in lists where as you go on, the size remains the same
+        -it helps with nested elements like lists
+        -it is relative to the root elements font size
+        -if the root font size is 20px, then 1rem will always be 20px and 2rem will be 40px, etc.
+
+ */

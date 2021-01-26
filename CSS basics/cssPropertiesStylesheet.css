@@ -1,0 +1,306 @@
+.section{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: rgb(219, 179, 179);
+}
+
+#rgba{
+    width:50%;
+    height:50%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#opacity{
+    width:50%;
+    height:50%;
+    background-color: rgb(207, 155, 164);
+    opacity: 0.3;
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(251, 230, 211);
+    margin: 15px;
+}
+
+h2{
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border-top: 2.5px grey solid;
+}
+
+#staticDiv{
+    position: static;
+    top: 100px;
+}
+
+#relativeDiv{
+    position: relative;
+    left: 100px; /* this offsets the position of the object, 100px from the left of where it would normally be*/
+}
+
+#absoluteDiv{
+    background-color: rgb(189, 176, 164);
+    position: absolute;
+    left: 100px;
+    /* because of the ancestor 'absoluteAncestor' (section), the absolute div has something to base its position on
+        now the position will be 100px from the left of its ancestor
+    */
+
+}
+
+#absoluteAncestor{
+    position: relative;
+    background-color: rgb(249, 251, 222); 
+    /* this provides the absoluteDiv with an ancestor whose position it can be set from */
+}
+
+#fixedDiv{
+    background-color: rgba(112, 128, 144, .4 );
+    position: fixed;
+    top: 20px;
+    left: 1300px;
+}
+#stickyDiv{
+    background-color: rgba(71, 116, 71, 0.4);
+    position: sticky;
+    top: 20px;
+    left: 1700px;
+}
+
+
+/* 
+    TRANSPARENCY
+
+    -rgba, (red, green, blue, alpha). the alpha property determines the transparency of the object
+    -alpha goes from 0-1 alpha applies to only the background
+    -opacity goes from 0-1, opacity applies to the entire element
+
+
+    POSITION
+    -sets how an element is positioned in a doc
+    -it changes how top left right and bottom work
+    -static = default position
+    -relative= changes the position relative to the elements given position
+        -ex: 'position: relative; top: 100px;' this offsets the position of the object,
+         100px from the top of where it would normally be
+    -absolute= removes an element from the normal document flow
+        -its position is relative to its closest positioned ancestor, otherwise
+         it is placed relative to the initial containing block
+        -the final position is determined by the vaules top, bottom, left, right
+    -a positioned element mean the element has a position other than static
+    -fixed= the fixed elements position is relative to the actual screen, it will not change
+        -this element is also not in the regular document flow
+    -sticky= starts out normal but once you scroll down the position becomes fixed
+
+*/
+#transitionsSection{
+    background-color: white;
+    width: 300px;
+    height: 450px;
+}
+
+.circle{
+    width:100px;
+    height: 100px;
+    background-color: rgb(162, 216, 221);
+    transition: border-radius 1s 0.25s, background-color 2s;
+}
+.circle:hover{
+    background-color: rgb(110, 151, 155);
+    border-radius: 50%;
+}
+
+.timingFunction{
+    background-color: white;
+}
+section div{
+    height: 50px;
+    width: 50px;
+    background-color: thistle;
+    transition: margin-left 2s;
+    border-radius: 5px;
+}
+.timingFunction:hover div{
+    margin-left: 300px;
+}
+
+
+section div:nth-of-type(1){
+    transition-timing-function: ease-in;
+}
+section div:nth-of-type(2){
+    transition-timing-function: ease-out;
+}
+section div:nth-of-type(3){
+    transition-timing-function: cubic-bezier(0.75, 0, 0.8, 0);
+}
+section div:nth-of-type(4){
+    transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+/* 
+    TRANSITIONS
+
+    -transition= object | transition time | delay | timing function
+        -separate the different transition calls with a ','
+        -timing functions changes the times for the animation, ex: faster at the start slow at the end
+        -use mdn for more transition functions
+*/
+
+.transformBox{
+    width: 700px;
+    height:100%;
+}
+.transformBox h3{
+    text-align: center;
+    height: 3rem;
+    width: 200px;
+    background-color: rgb(182, 152, 97);
+    border: 2.5px black solid;
+    margin: 15px auto; 
+    /* the auto attribute will center the object within its container, 
+     in this case the container width is set in .transformBox */
+}
+
+.transformBox h3:nth-of-type(2n){
+    background-color: wheat;
+}
+.transformBox h3:nth-of-type(3n){
+    background-color: rgb(185, 101, 52);
+}
+.transformBox h3:nth-of-type(4n){
+    background-color: rgb(55, 167, 139);
+}
+
+.transform1 h3:nth-of-type(1){
+    /* transform-origin: bottom right; */
+    transform: rotate(45deg);
+}
+.transform1 h3:nth-of-type(2){
+    transform: scale(0.75);
+}
+.transform1 h3:nth-of-type(3){
+    transform: translateX(100px);
+}
+.transform1 h3:nth-of-type(4){
+    transform: translate(-50px, 20px);
+    /* this moves it -50x and 20y */
+}
+.transform2 h3:nth-of-type(1){
+    /* transform-origin: bottom right; */
+    transform: skew(30deg);
+}
+.transform2 h3:nth-of-type(2){
+    /* transform-origin: bottom right; */
+    transform: skew(10deg, 5deg);
+}
+.transform2 h3:nth-of-type(3){
+    /* transform-origin: bottom right; */
+    transform: rotate(-45deg) scale(1.2);
+}
+.transform2 h3:nth-of-type(4){
+    /* transform-origin: bottom right; */
+    transition: 2s;
+}
+
+.transform2:hover h3:nth-of-type(4){
+    /* transform-origin: bottom right; */
+    transform: translateX(150px) rotate(180deg) scaleY(1.2);
+}
+
+/* 
+    CSS TRANSFORM
+
+    -manipulation and transformation of elements
+    -rotate= takes in deg, grad, rad, or turn
+    -transform-origin will change where on the object it is transformed from
+    -rotate x y and z rotate around the axis'
+    -scale= changes the size of an element
+        -scale x y and z also work
+    -translate= allows us to move around an element
+    -skew= skews an element on a 2d plane
+    -you can add multiple transforms to a single element
+    -everything done in a parent element will also apply to the child elements
+
+*/
+
+.fancyButtonSection{
+    width: 500px;
+    height: 500px;
+    margin: 50px;
+    background-color: rgb(6, 6, 42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#fancyButton{
+    width: 175px;
+    height: 50px;
+    font-size: 1em;
+    border: 2px  solid;
+    color: rgb(179, 132, 33);  
+    background: none;
+    padding: 1em 2em;
+    transition: all .15s;
+}
+
+#fancyButton:hover{
+    border-color: rgb(223, 188, 94);
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(255, 226, 145);
+    transform: translateY(-.25em);
+    /* transform: skewX(3deg); */
+    cursor: pointer;
+
+}
+
+
+
+
+.googleFonts{
+    font-size: 1.5em;
+}
+
+.googleFonts h2{
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.googleFonts p:nth-of-type(1){
+    font-family: 'Chakra Petch', sans-serif;
+}
+.googleFonts p:nth-of-type(2){
+    font-family: 'Open Sans', sans-serif;
+}
+.googleFonts p:nth-of-type(3){
+    font-family: 'Potta One', cursive, sans-serif;
+}
+
+/* 
+    GOOGLE FONTS
+    -include font file in the head of the html file
+    -google fonts is a free fonts resource
+
+*/
+
+
+
+
+
+
+
+#fillerText{
+    font-size: 20px;
+    line-height: 2;
+    /* background-image: url("data:image/jpeg;base64,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");
+    background-size: cover;
+    background-position: bottom; */
+    background: bottom/cover url("data:image/jpeg;base64,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");
+
+}
+.fillerText{
+    width: 100%;
+    margin-top: 100px;
+}
